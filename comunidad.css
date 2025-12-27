@@ -1,0 +1,285 @@
+/* ========== RESET GENERAL ========== */
+*,
+*::before,
+*::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: Georgia, 'Times New Roman', Times, serif;
+background-color: #cbb799;
+min-height: 100vh;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 50px;
+width: 100%;
+position: sticky;
+top: 0;
+background-color: #3d211a;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+z-index: 999;
+}
+
+.navbar-container {
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 90%;
+max-width: 1200px;
+}
+
+.navbar-logo {
+font-size: 2rem;
+font-weight: 600;
+color: #fff;
+text-decoration: none;
+}
+
+.navbar-menu {
+display: flex;
+gap: 1.5rem;
+list-style: none;
+}
+
+.navbar-menu li a {
+text-decoration: none;
+color: whitesmoke;
+font-size: 1rem;
+padding: 6px 16px;
+border-radius: 20px;
+transition: all 0.1s ease;
+border: 2px solid transparent;
+}
+
+.navbar-menu li a:hover,
+.navbar-menu li a.active {
+color: #162530;
+background: rgba(188, 212, 229, 0.8);
+border: 2px solid #3d211a;
+}
+
+/* ========== TOGGLE BUTTON (RESPONSIVE) ========== */
+.navbar-toggle {
+display: none;
+background: transparent;
+border: none;
+cursor: pointer;
+z-index: 1000;
+}
+
+.bar {
+display: block;
+width: 25px;
+height: 3px;
+margin: 5px auto;
+background: whitesmoke;
+transition: all 0.3s ease-in-out;
+}
+
+/* ========== CONTENIDO CENTRADO ========== */
+.contenido {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 2rem 1rem;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+/* ========== SECCIONES PASTORALES ========== */
+.pastorales {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+margin-bottom: 3rem;
+width: 100%;
+}
+
+.pastorales img {
+max-width: 100%;
+width: 400px;
+height: auto;
+border: 3px solid #fff;
+border-radius: 10px;
+margin-bottom: 1rem;
+}
+
+.texto-box {
+max-width: 700px;
+padding: 1rem;
+}
+
+.texto-box h2 {
+font-size: 2rem;
+margin-bottom: 0.5rem;
+}
+
+.texto-box p {
+font-size: 1rem;
+line-height: 1.5;
+}
+
+/* ========== DROPDOWN ========== */
+.dropdown {
+width: 60%;
+max-width: 400px;
+margin-top: 1rem;
+}
+
+.dropdown:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease;
+}
+
+.select {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: #643c23;
+color: floralwhite;
+padding: 1em;
+border-radius: 0.5em;
+cursor: pointer;
+box-shadow: inset 6px 6px 20px -1px black;
+}
+
+.select:hover {
+background: #cbb799;
+}
+
+.caret {
+width: 0;
+height: 0;
+border-left: 5px solid transparent;
+border-right: 5px solid transparent;
+border-top: 6px solid floralwhite;
+transition: 0.3s;
+}
+
+.caret-rotate {
+transform: rotate(180deg);
+}
+
+.Barra {
+display: none;
+opacity: 0;
+list-style: none;
+background: #fff;
+padding: 0.5em;
+margin-top: 0.3em;
+border-radius: 10px;
+box-shadow: 0 0.5em 1em #643c23;
+transition: 0.3s;
+}
+
+.Barra-open {
+display: block;
+opacity: 1;
+}
+
+.Barra li {
+padding: 0.5em;
+border-radius: 0.5em;
+cursor: pointer;
+}
+
+.Barra li:hover {
+background: #643c23;
+color: #fff;
+}
+
+.btn1 {
+text-decoration: none;
+color: black;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 880px) {
+.navbar-menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.7rem !important;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 250px;
+    padding: 2rem;
+    backdrop-filter: blur(200px);    
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 10);
+    
+}
+
+.navbar-menu.active {
+    display: flex;
+}
+
+.navbar-toggle {
+    display: block;
+}
+
+.navbar-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.texto-box h2 {
+    font-size: 1.5rem;
+}
+
+.texto-box p {
+    font-size: 0.95rem;
+}
+
+.pastorales img {
+    width: 90%;
+}
+}
+
+@media (max-width: 480px) {
+.navbar-logo {
+    font-size: 1.5rem;
+}
+
+.navbar-menu li a {
+    font-size: 1rem;
+    padding: 4px 12px;
+}
+
+.select {
+    font-size: 15px;
+    padding: 0.75em;
+}
+
+.texto-box h2 {
+    font-size: 1.2rem;
+}
+
+.texto-box p {
+    font-size: 0.9rem;
+}
+}
+
+/* ========== ICONO TELÉFONO ========== */
+.whatsapp-icon {
+    color: #25D366; /* Color oficial de WhatsApp */
+    font-size: 20px;
+    margin-right: 8px;
+}

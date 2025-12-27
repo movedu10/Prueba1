@@ -1,0 +1,247 @@
+
+/* ========== RESET GENERAL ========== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+    --primary-clr: #b38add;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #cbb799;
+  min-height: 100vh;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #3d211a;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.navbar-logo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: all 0.1s ease;
+  border: 2px solid transparent;
+}
+
+.navbar-menu li a:hover,
+.navbar-menu li a.active {
+  color: #162530;
+  background: rgba(188, 212, 229, 0.8);
+  border: 2px solid #3d211a;
+}
+
+/* ========== TOGGLE BUTTON (RESPONSIVE) ========== */
+.navbar-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background: whitesmoke;
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 880px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.7rem !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    padding: 2rem;
+    backdrop-filter: blur(300px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  /* Animación hamburguesa */
+  .navbar-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .navbar-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1.4rem;
+  }
+  .navbar-menu li a {
+    font-size: 1rem;
+  }
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+/* Secciones toggle */
+.toggle-section {
+    background-color: white;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.toggle-header {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    background-color: #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-body {
+    display: none;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.section-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-content h1, 
+.section-content h2 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.btn-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.btn-list li a {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.btn-list li a:hover {
+    background-color: #0056b3;
+}
+/* Coros */
+.coros-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.card-coro {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    padding: 1rem;
+}
+
+.card-coro:hover{
+  transform: scale(1.03);
+
+}
+
+.card-coro img {
+    max-width: 100%;
+    border-radius: 6px;
+}
+
+.contenido-coro {
+    margin-top: 1rem;
+}
+
+.whatsapp-icon {
+    color: green;
+    margin-right: 5px;
+}
+
+.img-sacramentos{
+  width: 100px;
+}
+
+.img-info{
+  width: 300px;
+  padding: 10px;
+} 

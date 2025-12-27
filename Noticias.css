@@ -1,0 +1,247 @@
+/* ========== RESET GENERAL ========== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --primary-clr: #b38add;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #cbb799;
+  min-height: 100vh;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #3d211a;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.navbar-logo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1rem;
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: all 0.1s ease;
+  border: 2px solid transparent;
+}
+
+.navbar-menu li a:hover,
+.navbar-menu li a.active {
+  color: #162530;
+  background: rgba(188, 212, 229, 0.8);
+  border: 2px solid #3d211a;
+}
+
+/* ========== TOGGLE BUTTON (RESPONSIVE) ========== */
+.navbar-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background: whitesmoke;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 880px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.7rem !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    padding: 2rem;
+    backdrop-filter: blur(200px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  /* Animación hamburguesa */
+  .navbar-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .navbar-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    font-size: 1.4rem;
+  }
+  .navbar-menu li a {
+    font-size: 1rem;
+  }
+}
+
+/* ========== TÍTULO PRINCIPAL ========== */
+.titulo-principal {
+    margin-top: 70px; /* deja espacio bajo el navbar fijo */
+    text-align: center;
+    padding: 20px 10px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.titulo-principal h1 {
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
+}
+
+/* ========== TOOLBAR ========== */
+#toolbar {
+    display: none;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#toolbar button {
+    padding: 8px 12px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    flex: 1 1 auto;
+    min-width: 120px;
+    transition: background 0.3s ease;
+}
+
+#toolbar button:hover:not(:disabled) {
+    background: #0056b3;
+}
+
+#toolbar button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ========== CONTENIDO ========== */
+#contenido {
+    width: 100%;
+    min-height: 200px;
+    padding: 15px;
+
+    /* Centrar el contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Centra horizontalmente */
+    text-align: center;     /* Centra texto */
+}
+
+#contenido > div {
+    width: 100%;
+    max-width: 600px;
+    background: #fefefe;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    position: relative;
+}
+
+/* Estilos para las imágenes dentro del contenido */
+#contenido img {
+    display: block;
+    margin: 10px auto;
+    max-width: 200px;
+}
+
+/* Estilos para modo edición */
+.editando {
+    border: 2px dashed #007bff;
+    background: #f9f9f9;
+}
+
+/* Botón editar */
+#editarBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+/* Botones eliminar noticia */
+button.eliminar-noticia {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}

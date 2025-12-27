@@ -1,0 +1,279 @@
+/* ========== RESET GENERAL ========== */
+/* Elimina márgenes y paddings por defecto del navegador */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* ========== ESTILOS GENERALES DEL BODY ========== */
+/* Se configura como contenedor flexible para permitir centrado vertical */
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #cbb799;
+  min-height: 100vh;
+}
+/* ========== NAVBAR ========== */
+/* Barra de navegación fija en la parte superior */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: #3d211a;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+/* Contenedor interno del navbar */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+}
+/* Logo del navbar */
+.navbar-logo {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+}
+/* Lista de enlaces del menú */
+.navbar-menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+/* Estilos de los enlaces del menú */
+.navbar-menu li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 1rem;
+  padding: 6px 16px;
+  border-radius: 20px;
+  transition: all 0.1s ease;
+  border: 2px solid transparent;
+}
+/* Efecto hover y activo */
+.navbar-menu li a:hover,
+.navbar-menu li a.active {
+  color: #162530;
+  background: rgba(188, 212, 229, 0.8);
+  border: 2px solid #3d211a;
+}
+/* ========== BOTÓN DE MENÚ RESPONSIVE ========== */
+/* Oculto por defecto, visible en pantallas pequeñas */
+.navbar-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+/* Barras del botón hamburguesa */
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background: whitesmoke;
+  transition: all 0.3s ease-in-out;
+}
+/* ========== CONTENIDO PRINCIPAL BOX1 ========== */
+/* Sección principal con fondo y contenido centrado */
+.box1 {
+  background: url(images/tp.jpeg) center no-repeat;
+  border-radius: 10px;
+  background-color: #cbb799;  /* relleno en espacios vacíos */
+  min-height: 80vh;
+  width: 100%;
+  
+  display: flex;
+  flex-direction: column; /* móviles primero */
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  text-align: center;
+}
+/* Contenedor de texto (no se usa actualmente, pero se deja para referencia) */
+.box1 .texto {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 600px;
+}
+/* Párrafos generales */
+p {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Párrafos dentro de box1 (con fondo para legibilidad) */
+.box1 p {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  max-width: 600px;
+}
+/* ========== MAPA IFRAME Y BOTÓN DE GOOGLE MAPS ========== */
+/* Estilo responsivo para el iframe de Google Maps */
+iframe {
+  width: 90%;
+  max-width: 600px;
+  height: 300px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+iframe:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+/* Botón que lleva a Google Maps */
+.btn-maps {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #3d211a;
+  padding: 12px 24px;
+  color: #fff;
+  border-radius: 10px;
+  transition: all 0.1s ease;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 1rem;
+  border: solid #fff;
+  width: fit-content;
+}
+/* Efecto hover en el botón */
+.btn-maps:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+/* ========== REDES SOCIALES ========== */
+/* Contenedor de botones de redes sociales */
+.frame {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 400px;
+  background: #e0e5ec;
+  border-radius: 10px;
+  box-shadow:
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001;
+}
+/* Botones de redes sociales */
+.btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  background: #e0e5ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: rgba(42, 52, 84, 1);
+  text-decoration: none;
+  box-shadow:
+    -7px -7px 20px 0px #fff9,
+    -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002,
+    4px 4px 5px 0px #0001;
+}
+/* Efecto hover en los botones de redes */
+.btn:hover {
+  font-size: 22px;
+}
+/* Colores por red social */
+.facebook {
+  color: #1877f2;
+}
+.whatsapp-icon {
+  color: #25D366;
+}
+.tiktok {
+  color: #000000;
+}
+.youtube {
+  color: #ff0000;
+}
+
+.btn-contac{
+  color: #fff;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+/* Ajustes para dispositivos hasta 880px */
+@media (max-width: 880px) {
+  /* Menú responsive oculto */
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.7rem !important;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    padding: 2rem;
+    backdrop-filter: blur(100px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 1);
+  }
+  /* Menú desplegado */
+  .navbar-menu.active {
+    display: flex;
+  }
+  /* Mostrar botón de menú hamburguesa */
+  .navbar-toggle {
+    display: block;
+  }
+  /* Animación del ícono de hamburguesa */
+  .navbar-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .navbar-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 600px) {
+  /* Box1 y redes adaptables al ancho */
+  .box1,
+  .frame {
+    max-width: 100%;
+    padding: 1rem;
+  }
+  /* Tamaño de los íconos sociales */
+  .btn {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .btn:hover {
+    font-size: 20px;
+  }
+  /* Logo más pequeño */
+  .navbar-logo {
+    font-size: 1.4rem;
+  }
+  /* Enlaces más pequeños */
+  .navbar-menu li a {
+    font-size: 1rem;
+  }
+}

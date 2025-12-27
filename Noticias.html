@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>Parroquia San Rafael Arcángel</title>
+    <link rel="icon" type="image/x-icon" href="images/SRA.ico" />
+    <link rel="stylesheet" href="Noticias.css" />
+</head>
+<body>
+
+<!--/////////// Encabezado y Menú de Navegación ///////////-->
+<header class="encabezado">
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="navbar-logo"><b></b></a>
+            <button class="navbar-toggle" aria-label="Abrir menú">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="navbar-menu">
+                <li><a href="index.html" class="active"><b>INICIO</b></a></li>
+                <li><a href="Informes.html"><b>INFORMES</b></a></li>
+                <li><a href="Comunidad.html"><b>COMUNIDAD</b></a></li>
+                <li><a href="Contactos.html"><b>CONTACTOS</b></a></li>
+                <li><a href="horarios.html"><b>HORARIOS</b></a></li>
+                <li><a href="Noticias.html"><b>Avisos y Eventos</b></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- Título principal -->
+<section class="titulo-principal">
+    <h1>Avisos Parroquiales</h1>
+</section>
+
+<!-- Botón para entrar a modo edición -->
+<button id="editarBtn">Add Noticia</button>
+
+<!-- Barra de herramientas en modo edición -->
+<div id="toolbar" style="display: none;">
+    <button id="addParrafo">➕ Añadir Noticia</button>
+    <button id="addImagen">🖼️ Subir imagen</button>
+    <button id="limpiar">🧹 Limpiar todo</button>
+    <button id="guardar">💾 Guardar y salir</button>
+    <button id="cancelar">❌ Salir sin guardar</button>
+</div>
+
+<!-- Contenido editable -->
+<div id="contenido" style="display: none;"></div>
+<div id="contenido"></div>
+
+
+
+
+<script src="js/publico.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
